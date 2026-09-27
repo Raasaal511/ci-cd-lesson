@@ -23,3 +23,11 @@ jobs:
 
             - name: Run tests
               run: pytest tests/
+
+    lint:
+      runs-on: ubunut-latest
+      steps:
+        - name: Check code lint
+          run: |
+            pip install black
+            black --check .

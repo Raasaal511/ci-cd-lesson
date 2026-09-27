@@ -30,4 +30,3 @@ jobs:
             
             - name: Check secrets
               run: echo "${{ secrets.SECRET_KEY }}"
-            
