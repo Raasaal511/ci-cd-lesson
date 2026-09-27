@@ -4,11 +4,20 @@ on: [push]
 
 
 jobs:
-    greet:
+    tests:
         runs-on: ubuntu-latest
         steps:
-            - name: First time use CI yml file for students
-              run: echo "Hello, world!"
+            - name: Checkout code
+              uses: actions/checkout@v4
             
-            - name: Say how are you
-              run: echo "Dude, how are you?"
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.12"
+                cache: pip
+
+            - name: Install dependencies
+              run: pip install -r requirements-dev.txt
+
+            - name: Run tests
+              run: pytest tests/
