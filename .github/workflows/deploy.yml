@@ -1,8 +1,10 @@
-name: CI workflow
+name: Deploy project
 
 on: 
     push:
-        branches: [develop]
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 
 jobs:
