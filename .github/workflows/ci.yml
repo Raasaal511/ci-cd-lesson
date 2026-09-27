@@ -1,0 +1,14 @@
+name: CI workflow
+
+on: [push]
+
+
+jobs:
+    greet:
+        runs-on: ubuntu-latest
+        steps:
+            - name: First time use CI yml file for students
+              run: echo "Hello, world!"
+            
+            - name: Say how are you
+              run: echo "Dude, how are you?"
